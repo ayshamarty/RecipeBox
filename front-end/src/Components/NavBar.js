@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import '../App.css'
 
-import Create from './Create';
+import RecipeForm from './RecipeForm';
 import Browse from './Browse';
 
 import {
@@ -31,7 +31,7 @@ function NavBar() {
 
                 <Route exact path="/"/>
                 <Route path="/browse" component={Browse} />
-                <Route path="/create" component={Create} />
+                <Route path="/create" component={RecipeForm} />
 
 
             </Router>

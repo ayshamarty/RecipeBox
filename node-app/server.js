@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const db = require("./config/keys").mongoURI;
+const db = 'mongodb://localhost:27017/recipebox';
 
 mongoose
   .connect(db)
