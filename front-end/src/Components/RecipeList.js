@@ -1,13 +1,26 @@
-import React  from "react";
+import React from "react";
+import ListGroup from "react-bootstrap/ListGroup";
+
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+import RecipeIndex from "./RecipeIndex";
+
+function RecipeList(props) {
 
 
-function RecipeList() {
+  return (
+    <div className="container">
 
-    return (
-      <div className="container">
-          Recipe Index
-      </div>
-    );
-  }
+        <ListGroup>
+          <ListGroup.Item variant="info">
+            Recipes
+          </ListGroup.Item>
+          {props.data.map((recipe, index) => (
+            <RecipeIndex getAll={props.getAll} recipe={recipe} getID={props.getID} key={index}/>
+          ))}
+        </ListGroup>
+    </div>
+  );
+}
 
-export default RecipeList
+export default RecipeList;
